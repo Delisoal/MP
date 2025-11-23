@@ -14,13 +14,13 @@ function setMP(){
 setMP();
 id("mpname").oninput=setMP;
 function setEmbed(){
-  minArray=maxArray=[];
+  minArray=[];
+  maxArray=[];
   document.querySelectorAll("#config input,#config select").forEach(function(element){
     let min=element.value.split(",")[0];
     let max=element.value.split(",")[1];
     min?minArray[minArray.length]=min:"";
     max?maxArray[maxArray.length]=max:"";
-    console.log(min,max,element.value.split(",")[1]);
   });
   let min=minArray.sort(function(a,b){return a-b})[0];
   let max=maxArray.sort(function(a,b){return b-a})[0];

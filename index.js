@@ -4,7 +4,7 @@ function id(id){
 let minArray=[];
 let maxArray=[];
 function setMP(){
-  fetch("./embed/"+id("mpname").value).then(function(data){
+  fetch("./embed/"+id("mpname").value+"?d="+new Date().getTime()).then(function(data){
     return data.text();
   }).then(function(html){
     id("config").innerHTML=html;

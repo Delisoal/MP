@@ -15,7 +15,7 @@ setMP();
 id("mpname").oninput=setMP;
 function setEmbed(){
   minArray=maxArray=[];
-  document.querySelectorAll("input,select").forEach(function(element){
+  document.querySelectorAll("#config input,#config select").forEach(function(element){
     let min=element.value.split(",")[0];
     let max=element.value.split(",")[1];
     min?minArray[minArray.length]=min:"";

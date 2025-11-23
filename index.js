@@ -46,18 +46,23 @@ function setEmbed(){
     let year=Math.floor((min||1980)/10)*10+i*10;
     ctx.fillText(year,x,height*0.8);
   }
-  let baseYear=Math.floor((min||1980)/10)*10;
-  let startIndex=(min-baseYear)/10;
-  let endIndex=((max||nowYear)-baseYear)/10;
-  let barStartX=Math.round(15+startIndex*spacing);
-  let barEndX=Math.round(15+endIndex*spacing);
-  let barY=height*0.25;
-  let barHeight=height*0.2;
-  ctx.fillStyle="#4287f5";
-  ctx.fillRect(barStartX,barY,barEndX-barStartX,barHeight);
-  ctx.fillStyle="gray";
-  ctx.textAlign="center";
-  ctx.fillText(`${min} - ${max||"販売中"}`,(barStartX+barEndX)/2,barY+barHeight/2+6);
-  id("sp").innerHTML=`${min}年 - ${(max||"販売中")+(max?"年":"")}`;
+  if(min<(max||nowYear)){
+    let baseYear=Math.floor((min||1980)/10)*10;
+    let startIndex=(min-baseYear)/10;
+    let endIndex=((max||nowYear)-baseYear)/10;
+    let barStartX=Math.round(15+startIndex*spacing);
+    let barEndX=Math.round(15+endIndex*spacing);
+    let barY=height*0.25;
+    let barHeight=height*0.2;
+    ctx.fillStyle="#4287f5";
+    ctx.fillRect(barStartX,barY,barEndX-barStartX,barHeight);
+    ctx.fillStyle="gray";
+    ctx.textAlign="center";
+    ctx.fillText(`${min} - ${max||"販売中"}`,(barStartX+barEndX)/2,barY+barHeight/2+6);
+    id("sp").innerHTML=`${min}年 - ${(max||"販売中")+(max?"年":"")}`;
+  }
+  else{
+    id("sp").innerHTML="エラー";
+  }
 }
 id("config").oninput=setEmbed;

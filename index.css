@@ -46,6 +46,8 @@ header{
     height:60%;
     font-weight:bold;
     text-align:center;
+}
+#sp{
     font-size:1.5em;
 }
 select{

@@ -23,6 +23,7 @@ function setEmbed(){
   });
   let min=minArray.sort(function(a,b){return a-b})[0];
   let max=maxArray.sort(function(a,b){return b-a})[0];
+  console.log(min,max);
   let canvas=id("display");
   let ctx=canvas.getContext("2d");
   let width=id("result").offsetWidth*0.8;
@@ -42,7 +43,6 @@ function setEmbed(){
     ctx.lineTo(x,height*0.7);
     ctx.stroke();
     let year=Math.floor((min||1980)/10)*10+i*10;
-    console.log(i,x,year);
     ctx.fillText(year,x,height*0.8);
   }
   let baseYear=Math.floor((min||1980)/10)*10;

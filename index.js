@@ -20,10 +20,10 @@ function setEmbed(){
     let max=element.value.split(",")[1];
     min?minArray[minArray.length]=min:"";
     max?maxArray[maxArray.length]=max:"";
+    console.log(min,max);
   });
   let min=minArray.sort(function(a,b){return a-b})[0];
   let max=maxArray.sort(function(a,b){return b-a})[0];
-  console.log(min,max);
   let canvas=id("display");
   let ctx=canvas.getContext("2d");
   let width=id("result").offsetWidth*0.8;

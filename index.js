@@ -56,7 +56,7 @@ function setEmbed(){
     let barHeight=height*0.2;
     ctx.fillStyle="#4287f5";
     ctx.fillRect(barStartX,barY,barEndX-barStartX,barHeight);
-    ctx.fillStyle="gray";
+    ctx.fillStyle="black";
     ctx.textAlign="center";
     ctx.fillText(`${min} - ${max||"販売中"}`,(barStartX+barEndX)/2,barY+barHeight/2+6);
     id("sp").innerHTML=`${min}年 - ${(max||"販売中")+(max?"年":"")}`;

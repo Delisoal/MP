@@ -44,6 +44,10 @@ header{
 .description{
     height:calc(40% - 1em);
 }
+.result{
+    font-weight:bold;
+    text-align:center;
+}
 select{
     width:90%;
     margin:2px;

@@ -23,6 +23,10 @@ header{
     background:white;
     box-shadow:0 6px 18px rgba(10,10,10,0.06);
     border-radius:5px;
+    box-sizing:border-box;
+    padding:1em 2em;
+    font-size:1.1em;
+    overflow-y:auto;
 }
 .left{
     width:40%;
@@ -38,4 +42,13 @@ header{
 }
 .description{
     height:calc(40% - 1em);
+}
+select{
+    width:90%;
+    margin:2px;
+    border:1px solid #e5e7eb;
+    border-radius:5px;
+    font-size:1em;
+    padding:8px;
+    cursor:pointer;
 }

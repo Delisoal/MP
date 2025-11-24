@@ -38,6 +38,7 @@ function setEmbed(){
   let modeldiv=document.createElement("div");
   let nowYear=new Date().getFullYear();
   let height=id("result").offsetHeight*0.6;
+  let margin=20;
   modeldiv.style.cssText="width:90%;height:1px";
   id("result").appendChild(modeldiv);
   let width=modeldiv.offsetWidth;
@@ -47,9 +48,9 @@ function setEmbed(){
   ctx.font="12px sans-serif";
   ctx.textAlign="center"; 
   let count=(Math.ceil(nowYear/10)*10-Math.floor((min||1980)/10)*10)/10;
-  let spacing=(width-30)/count;
+  let spacing=(width-margin*2)/count;
   for(let i=0;i<count+1;i++){
-    let x=Math.round(15+i*spacing);
+    let x=Math.round(margin+i*spacing);
     ctx.beginPath();
     ctx.moveTo(x,0);
     ctx.lineWidth=1;
@@ -63,8 +64,8 @@ function setEmbed(){
     let baseYear=Math.floor((min||1980)/10)*10;
     let startIndex=(min-baseYear)/10;
     let endIndex=((max||nowYear)-baseYear)/10;
-    let barStartX=Math.round(15+startIndex*spacing);
-    let barEndX=Math.round(15+endIndex*spacing);
+    let barStartX=Math.round(margin+startIndex*spacing);
+    let barEndX=Math.round(margin+endIndex*spacing);
     let barY=height*0.25;
     let barHeight=height*0.2;
     ctx.fillStyle="#4287f5";

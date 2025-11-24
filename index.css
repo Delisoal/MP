@@ -62,3 +62,18 @@ select{
 .source{
     display:none;
 }
+@media screen and (max-width:850px),screen and (orientation:portrait){
+    .parent{
+        flex-wrap:nowrap;
+        flex-direction:column;
+        height:auto;
+    }
+    .left{
+        width:90vw;
+        height:40vh;
+    }
+    .right{
+        width:90vw;
+        margin-top:1em;
+    }
+}

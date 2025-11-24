@@ -2,7 +2,7 @@ body{
     margin:0;
     background:#f3f4f6;
     display:flex;
-    font-size: min(4vw,16px);
+    font-size:min(4vw,16px);
     flex-direction:column;
     align-content:center;
     flex-wrap:wrap;

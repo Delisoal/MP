@@ -1,8 +1,6 @@
 function id(id){
   return document.getElementById(id);
 }
-let minArray=[];
-let maxArray=[];
 function setMP(){
   fetch("./embed/"+id("mpname").value+"?d="+new Date().getTime()).then(function(data){
     return data.text();
@@ -14,8 +12,8 @@ function setMP(){
 setMP();
 id("mpname").oninput=setMP;
 function setEmbed(){
-  minArray=[];
-  maxArray=[];
+  let minArray=[];
+  let maxArray=[];
   document.querySelectorAll("#config input,#config select").forEach(function(element){
     let min=element.value.split(",")[0];
     let max=element.value.split(",")[1];

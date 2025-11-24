@@ -58,7 +58,7 @@ function setEmbed(){
     ctx.lineTo(x,height*0.7);
     ctx.stroke();
     let year=Math.floor((min||1980)/10)*10+i*10;
-    ctx.fillText(year,x,height*0.8);
+    ctx.fillText(year,x,height*0.75);
   }
   if(min<(max||nowYear)){
     let baseYear=Math.floor((min||1980)/10)*10;

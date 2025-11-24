@@ -78,5 +78,6 @@ select{
     .right{
         width:90vw;
         margin:1em auto;
+        height:40vh;
     }
 }

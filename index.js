@@ -38,7 +38,7 @@ function setEmbed(){
   let modeldiv=document.createElement("div");
   let nowYear=new Date().getFullYear();
   let height=id("result").offsetHeight*0.6;
-  let margin=25;
+  let margin=30;
   modeldiv.style.cssText="width:90%;height:1px";
   id("result").appendChild(modeldiv);
   let width=modeldiv.offsetWidth;

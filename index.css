@@ -31,19 +31,19 @@ header{
     line-height:2;
 }
 .left{
-    width:15em;
+    width:40%;
 }
 .right{
-    width:calc(100% - 16em);
+    width:calc(60% - 1em);
     display:flex;
     flex-direction:column;
     justify-content:space-between;
 }
 .description{
-    height:calc(40% - 1em);
+    height:calc(100% - 16em);
 }
 .result{
-    height:60%;
+    height:15em;
     font-weight:bold;
     text-align:center;
 }

@@ -63,13 +63,15 @@ select{
     display:none;
 }
 @media screen and (max-width:850px),screen and (orientation:portrait){
+    body{
+        text-align:center;
+    }
     .parent{
         flex-wrap:nowrap;
         flex-direction:column;
         height:auto;
-        text-align:center;
     }
-    .parent{
+    .parent,header{
         text-align:start;
     }
     .left{

@@ -12,6 +12,7 @@ function setMP(){
 setMP();
 id("mpname").oninput=setMP;
 function setEmbed(){
+  id("source").innerHTML="";
   document.querySelectorAll(".source").forEach(function(element){
     let li=document.createElement("li");
     let clone=element.cloneNode(true);

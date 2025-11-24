@@ -67,6 +67,10 @@ select{
         flex-wrap:nowrap;
         flex-direction:column;
         height:auto;
+        text-align:center;
+    }
+    .parent{
+        text-align:start;
     }
     .left{
         width:90vw;

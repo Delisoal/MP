@@ -16,6 +16,7 @@ function setEmbed(){
     let li=document.createElement("li");
     let clone=element.cloneNode(true);
     clone.classList.remove("source");
+    clone.target="_blank";
     li.appendChild(clone);
     id("source").appendChild(li);
     element.remove();

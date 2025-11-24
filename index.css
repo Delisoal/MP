@@ -65,6 +65,7 @@ select{
 @media screen and (max-width:850px),screen and (orientation:portrait){
     body{
         text-align:center;
+        align-items:center;
     }
     .parent{
         flex-wrap:nowrap;

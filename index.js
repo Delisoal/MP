@@ -43,7 +43,7 @@ function setEmbed(){
       return String(num).split("")[4]||"";
     }
     function toNum(num){
-      return Number(String(num).match(/[0-9]/g).join(""));
+      return Number(String(num).match(/[0-9][0-9][0-9][0-9]/g).join(""));
     }
     function getAdd(num){
       return Number(String(num).split("?")[1]||10);

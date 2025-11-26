@@ -34,12 +34,12 @@ function setEmbed(){
     }
     let min=element.value.split(",")[0];
     let max=element.value.split(",")[1];
-    min?minArray[minArray.length]={value:toNum(min),type:getType(min)}:"";
-    max?maxArray[maxArray.length]={value:toNum(max),type:getType(max)}:"";
+    min?minArray[minArray.length]={value:toNum(min),origin:toNum(min),type:getType(min)}:"";
+    max?maxArray[maxArray.length]={value:toNum(max),origin:toNum(max),type:getType(max)}:"";
   });
   minArray?minArray=minArray.map(function(data){
     if(data.type=="?"){
-      return {value:data.value+10,type:data.type};
+      return {origin:data.value,value:data.value+10,type:data.type};
     }
     else{
       return data;
@@ -48,7 +48,7 @@ function setEmbed(){
   let minObj=minArray.sort(function(a,b){return b.value-a.value})[0];
   let maxObj=maxArray.sort(function(a,b){return a.value-b.value})[0];
   console.log(minObj,maxObj);
-  let min=minObj.type=="?"?minObj.value-10:minObj.value;
+  let min=minObj.type=="?"?minObj.origin:minObj.value;
   let max=maxObj?maxObj.value:null;
   let canvas=id("display");
   let ctx=canvas.getContext("2d");
@@ -90,8 +90,8 @@ function setEmbed(){
     [minObj,maxObj].forEach(function(data){
       if(data){
         if(data.type=="?"){
-          let subBarStartX=Math.round(margin+((data.value-baseYear)/10)*spacing);
-          let subBarWidth=Math.round(margin+((data.value+10-baseYear)/10)*spacing)-subBarStartX;
+          let subBarStartX=Math.round(margin+((data.origin-baseYear)/10)*spacing);
+          let subBarWidth=Math.round(margin+((data.origin+10-baseYear)/10)*spacing)-subBarStartX;
           ctx.beginPath();
           ctx.fillStyle="#00ffff";
           ctx.fillRect(subBarStartX,barY,subBarWidth,barHeight);

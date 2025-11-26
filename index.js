@@ -36,6 +36,7 @@ function setEmbed(){
   });
   let minObj=minArray.sort(function(a,b){return b.value-a.value})[0];
   let maxObj=maxArray.sort(function(a,b){return a.value-b.value})[0];
+  console.log(minObj,maxObj);
   let min=minObj.value;
   let max=maxObj.value||null;
   let canvas=id("display");

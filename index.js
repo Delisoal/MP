@@ -23,6 +23,7 @@ function setMP(){
         id("source").appendChild(li);
         element.remove();
       });
+      id("loading").style.display="none";
     });
   });
 }
@@ -113,6 +114,5 @@ function setEmbed(){
   else{
     id("sp").innerHTML="エラー";
   }
-  id("loading").style.display="none";
 }
 id("config").oninput=setEmbed;

@@ -5,7 +5,7 @@ function setMP(){
   fetch("./embed/"+id("mpname").value+"?d="+new Date().getTime()).then(function(data){
     return data.text();
   }).then(function(html){
-    id("config").innerHTML=html;
+    id("embed").innerHTML=html;
     setEmbed();
     window.onresize=setEmbed;
     id("source").innerHTML="";

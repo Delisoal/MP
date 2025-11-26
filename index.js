@@ -29,10 +29,13 @@ function setEmbed(){
     function getType(num){
       return String(num).split("")[4]||"";
     }
+    function toNum(num){
+      return Number(String(num).match(/[0-9]/g).join(""));
+    }
     let min=element.value.split(",")[0];
     let max=element.value.split(",")[1];
-    min?minArray[minArray.length]={value:min,type:getType(min)}:"";
-    max?maxArray[maxArray.length]={value:max,type:getType(max)}:"";
+    min?minArray[minArray.length]={value:toNum(min),type:getType(min)}:"";
+    max?maxArray[maxArray.length]={value:toNum(max),type:getType(max)}:"";
   });
   minArray?minArray=minArray.map(function(data){
     if(data.type=="?"){

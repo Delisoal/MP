@@ -42,7 +42,7 @@ function setEmbed(){
     min?minArray[minArray.length]={value:toNum(min),valid:toNum(min),type:getType(min)}:"";
     max?maxArray[maxArray.length]={value:toNum(max),valid:toNum(max),type:getType(max)}:"";
   });
-  minArray?minArray=minArray.map(function(data){
+  maxArray?maxArray=maxArray.map(function(data){
     if(data.type=="?"){
       return {valid:data.value,value:data.value+10,type:data.type};
     }

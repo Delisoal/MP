@@ -75,6 +75,9 @@ select{
     justify-content:center;
     align-items:center;
 }
+#loading img{
+    width:10vw;
+}
 @media screen and (max-width:850px),screen and (orientation:portrait){
     body{
         text-align:center;

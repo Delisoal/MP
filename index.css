@@ -58,6 +58,7 @@ select{
     font-size:1em;
     padding:8px;
     cursor:pointer;
+    display:block;
 }
 .source{
     display:none;

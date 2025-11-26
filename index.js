@@ -76,6 +76,7 @@ function setEmbed(){
       ctx.fillRect(barStartX,barY,barEndX-barStartX,barHeight);
       ctx.closePath();
       [minObj,maxObj].forEach(function(data){
+        if(data){
           if(data.type=="?"){
               let subBarStartX=Math.round(margin+((data.value-baseYear)/10)*spacing);
               let subBarWidth=Math.round(margin+((data.value+10-baseYear)/10)*spacing)-subBarStartX;
@@ -86,6 +87,7 @@ function setEmbed(){
               ctx.closePath();
               barEndX+=subBarWidth/2;
           }
+        }
       });
       ctx.fillStyle="black";
       ctx.textAlign="center";

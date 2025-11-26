@@ -34,7 +34,7 @@ function setEmbed(){
     min?minArray[minArray.length]={value:min,type:getType(min)}:"";
     max?maxArray[maxArray.length]={value:max,type:getType(max)}:"";
   });
-  minObj?minObj=minObj.map(function(data){
+  minArray?minArray=minArray.map(function(data){
     if(data.type=="?"){
       return {value:data.value+10,type:data.type};
     }

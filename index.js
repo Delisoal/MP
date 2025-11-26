@@ -2,6 +2,7 @@ function id(id){
   return document.getElementById(id);
 }
 function setMP(){
+  id("loading").style.display="";
   fetch("./embed/"+id("mpname").value+"?d="+new Date().getTime()).then(function(data){
     return data.text();
   }).then(function(html){
@@ -112,5 +113,6 @@ function setEmbed(){
   else{
     id("sp").innerHTML="エラー";
   }
+  id("loading").style.display="none";
 }
 id("config").oninput=setEmbed;

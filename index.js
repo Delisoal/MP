@@ -45,14 +45,17 @@ function setEmbed(){
     function toNum(num){
       return Number(String(num).match(/[0-9]/g).join(""));
     }
+    function getAdd(num){
+      return String(num).split("")[5]=="-"?5:10;
+    }
     let min=element.value.split(",")[0];
     let max=element.value.split(",")[1];
-    min?minArray[minArray.length]={value:toNum(min),valid:toNum(min),type:getType(min)}:"";
-    max?maxArray[maxArray.length]={value:toNum(max),valid:toNum(max),type:getType(max)}:"";
+    min?minArray[minArray.length]={value:toNum(min),valid:toNum(min),type:getType(min),add:getAdd(min)}:"";
+    max?maxArray[maxArray.length]={value:toNum(max),valid:toNum(max),type:getType(max),add:getAdd(max)}:"";
   });
   maxArray?maxArray=maxArray.map(function(data){
     if(data.type=="?"){
-      return {valid:data.value,value:data.value+10,type:data.type};
+      return {valid:data.value,value:data.value+data.add,type:data.type,add:data.add};
     }
     else{
       return data;
@@ -103,7 +106,7 @@ function setEmbed(){
       if(data){
         if(data.type=="?"){
           let subBarStartX=Math.round(margin+((data.valid-baseYear)/10)*spacing);
-          let subBarWidth=Math.round(margin+((data.valid+10-baseYear)/10)*spacing)-subBarStartX;
+          let subBarWidth=Math.round(margin+((data.valid+data.add-baseYear)/10)*spacing)-subBarStartX;
           ctx.beginPath();
           ctx.fillStyle="#a7c0f2";
           ctx.fillRect(subBarStartX,barY,subBarWidth,barHeight);

@@ -103,7 +103,7 @@ function setEmbed(){
     ctx.fillStyle="black";
     ctx.textAlign="center";
     ctx.fillText(`${min} - ${max||"販売中"}`,(barStartX+barEndX)/2,barY+barHeight/2+6);
-    id("sp").innerHTML=`${min}年 - ${(max||"販売中")+(max?"年":"")}`;
+    id("sp").innerHTML=`${min}年${minObj.type=="?"?"頃":""} - ${(max||"販売中")+(max?"年":"")+(maxObj?(maxObj.type=="?"?"頃":""):"")}`;
   }
   else{
     id("sp").innerHTML="エラー";
